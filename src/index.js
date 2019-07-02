@@ -1,16 +1,7 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { prisma } = require('./generated/prisma-client')
 
-// 1 - typedefs
-
-// let links = [{
-//     id: 'link-0',
-//     url: 'www.howtographql.com',
-//     description: 'Fullstack tutorial for GraphQL'
-//   }]
-
-// 2
-// let idCount = links.length
+// Resolvers
 
 const resolvers = {
   Query: {
@@ -29,7 +20,8 @@ const resolvers = {
   },
 }
 
-// 3
+// Server
+
 const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
   resolvers,
